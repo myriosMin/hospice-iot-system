@@ -45,11 +45,91 @@ All three units are powered by **M5Stack Fire**, interconnected with **MQTT**, a
 ---
 
 ## 📦 Repository Structure
-├── /docs/         # Infographics, flowcharts, presentation slides
-├── /code/         # MicroPython scripts per unit
-├── README.md
-├── LICENSE
-└── .gitignore
+
+- `docs/` – Infographics, presentation slides, and flowcharts  
+- `code/` – MicroPython scripts for each unit (environment, health, safety)  
+- `README.md` – Project overview and setup  
+- `LICENSE` – MIT license info  
+- `.gitignore` – Git tracking rules
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🧱 Hardware Requirements
+
+To replicate this project, you'll need the following components:
+
+- `3×` M5Stack Fire core units  
+- `1×` ENV III Unit (temperature & humidity)  
+- `1×` TVOC/eCO2 Unit (air quality)  
+- `1×` Earth Unit (wet floor detection)  
+- `1×` Mini Heart Rate Unit  
+- `1×` NCIR 2 Unit (IR body temperature)  
+- `1×` Gesture Sensor  
+- `1×` RFID Unit  
+- `3×` Micro Servo Motors  
+- USB-C cables, breadboard, and jumper wires (for optional testing and prototyping)
+
+**Environmental Fire unit** is connected with ENV III and TVOC/eCO2 sensors, and a servo motor.
+**Health Fire unit** is connected with Heart Rate and NCIR 2 sensors, and a servo motor.
+**Safety Fire unit** is connected with Gesture sensor, RFID unit and a servo motor.
+
+---
+
+### 💻 Software Setup (MicroPython via UIFlow)
+
+All units were programmed using **M5Stack UIFlow**, which uses **MicroPython**.
+
+#### 📅 Required Imports
+The following modules and libraries were used (usually already imported in UIFlow):
+
+```python
+from m5stack import *
+from m5ui import *
+from uiflow import *
+import wifiCfg
+from m5mqtt import M5mqtt
+from libs.json_py import *
+import unit
+```
+
+#### 🚀 Getting Started with UIFlow
+1. Go to [https://flow.m5stack.com](https://flow.m5stack.com)  
+2. Connect your M5Stack Fire device via WiFi
+3. Flash the UIFlow firmware onto your device (if not already done)  
+4. Use the UI editor to add sensors/units, or switch to code view to write MicroPython manually  
+5. Ensure WiFi is configured using `wifiCfg` to enable MQTT connectivity
+
+---
+
+### ☁️ Cloud Dashboard with Qubitro
+
+We used [**Qubitro**](https://qubitro.com) for real-time cloud data visualization and MQTT communication.
+
+#### 🔧 Steps to Set Up:
+1. Create an account at [qubitro.com](https://qubitro.com)  
+2. Create 3 devices (one per unit: Environment, Health, Safety)  
+3. Generate MQTT credentials (server, port, username, password, topic)  
+4. Add the credentials in each unit's MicroPython code
+
+#### 🧪 Sample MQTT Setup:
+```python
+m5mqtt = M5mqtt("unit_1", "mqtt.qubitro.com", 1883, "your_username", "your_password", 300)
+m5mqtt.start()
+```
+
+Each unit sends data every few seconds to Qubitro, where real-time dashboards and graphs can be built easily.
+
+---
+
+### 🧠 Tips & Troubleshooting
+
+- Use the UIFlow Unit test tool to confirm sensor communication before full integration  
+- If a sensor isn’t working, check its **I2C address** and wiring  
+- Some sensors may need **sensitivity adjustment** or slight physical tuning  
+- MQTT errors? Double-check your **Qubitro credentials** and network connection  
+- For multi-unit communication, ensure **unique MQTT topics** are used to prevent message overlap
 
 ---
 
