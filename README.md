@@ -157,12 +157,11 @@ Each unit sends data every few seconds to Qubitro, where real-time dashboards an
 
 ## 🧑‍🤝‍🧑 Contributors
 
-| Name | Role |
-|------|------|
-| Min | Environmental Unit / MQTT / Qubitro |
-| Habib | Health Unit / Prototype |
-| Alex | Safety Unit / Prototype |
-| Jin Bin | Documentation / Prototype |
+[Year 1, Engineering Exploration Project, Diploma in AI & Data Engineering, Nanyang Polytechnic]
+- [**Min Phyo Thura**](https://github.com/your-github-handle) (Environmental Unit / MQTT / Qubitro)
+- [Lim Jin Bin](https://github.com/LimJinBin32) (Health Unit / Prototype)
+- [Alexander Chan](https://github.com/Redbeanchan) (Safety Unit / Prototype)  
+- [Mohammad Habib](https://github.com/habibmohammad35) (Documentation / Prototype)
 
 ---
 
@@ -176,7 +175,7 @@ Each unit sends data every few seconds to Qubitro, where real-time dashboards an
 
 ## 📝 License
 
-MIT License (Feel free to build on this project for **learning** purposes citing proper credits!)
+MIT License with Common Clause (Feel free to build on this project for **learning** purposes citing proper credits!)
 
 ---
 
