@@ -158,7 +158,7 @@ Each unit sends data every few seconds to Qubitro, where real-time dashboards an
 ## 🧑‍🤝‍🧑 Contributors
 
 [Year 1, Engineering Exploration Project, Diploma in AI & Data Engineering, Nanyang Polytechnic]
-- [**Min Phyo Thura**](https://github.com/your-github-handle) (Environmental Unit / MQTT / Qubitro)
+- [**Min Phyo Thura**](https://github.com/myriosMin) (Environmental Unit / MQTT / Qubitro)
 - [Lim Jin Bin](https://github.com/LimJinBin32) (Health Unit / Prototype)
 - [Alexander Chan](https://github.com/Redbeanchan) (Safety Unit / Prototype)  
 - [Mohammad Habib](https://github.com/habibmohammad35) (Documentation / Prototype)
